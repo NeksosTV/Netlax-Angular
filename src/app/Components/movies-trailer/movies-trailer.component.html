@@ -1,0 +1,11 @@
+
+
+<ul *ngIf="label.length > 0" class="UL">
+    <li *ngFor="let movie of label" class="liste">
+        <a routerLink="'/movies/label" class="lien">
+               <div class="card-header">
+                    {{movie}}
+                </div>     
+        </a>  
+    </li>
+</ul>

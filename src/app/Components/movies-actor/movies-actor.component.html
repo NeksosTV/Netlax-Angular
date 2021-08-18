@@ -1,0 +1,10 @@
+
+
+
+<div *ngFor="let Actor of actor">
+  <a [routerLink]="'/acteurDetail/'+Actor.IdCast"> <input style="vertical-align:middle"  class="button text-white"   type="button" [value]="Actor.LastName" ></a> 
+ </div>
+
+
+
+<div *ngIf="actor.length ==0">La liste est en cours de chargement...</div>

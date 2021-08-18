@@ -1,0 +1,22 @@
+
+  
+  
+  
+  <!-- <mat-paginator [length]="100" [pageSize]="10" [pageSizeOptions]="[5, 10, 25, 100]" aria-label="Select page">
+  
+  </mat-paginator> -->
+
+
+ <ul *ngIf="movies.length > 0" class="UL">    
+    <li *ngFor="let movie of movies" class="liste"> 
+        <div class="card" style="width: 18rem;" [ngStyle]="{display: 'flex', flexWrap: 'wrap', width:'30%', marginLeft:'30%'}">
+            <img class="card-img-top" src="https://image.tmdb.org/t/p/original/{{movie.Picture}}" alt="Card image cap" (error)="defaultsrc(image) "#image>
+                <div class="card-body">
+                  <a [routerLink]="'/movies/'+movie.IdMovie" target="_blank" rel="noopener noreferrer"><h5 class="card-title btn btn-primary text-white">{{movie.Title}}</h5></a>
+                  <p class="card-text">{{movie.Summary}}</p>
+              </div>
+        </div>
+    </li>
+</ul>
+
+<div *ngIf="movies.length ==0">La liste est en cours de chargement...</div>

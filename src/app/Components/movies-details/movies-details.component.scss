@@ -1,0 +1,21 @@
+*{
+    font-size: large;
+     box-sizing: border-box;
+     color: rgb(189, 189, 189);
+}
+
+
+#BOUTTON{
+    margin-left: 50%;
+}
+
+
+.search-box{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: #34495e;
+    height: 40px;
+    padding : 10px;
+}
