@@ -32,13 +32,12 @@ export class MoviesListComponent implements OnInit {
     )
   }
 
-  public gotoliste(id : number){
-    console.log(id);
-    
+  public gotoliste(event : any){
+    let id = event.target.value;
     this._router.navigateByUrl("/genre/"+id)
   }
 
-  public defaultsrc(img : HTMLImageElement){
+  public defaultsrc(img : HTMLImageElement){    // image par défayt quand un film ne posséde pas d'image
     img.src = "./assets/NotFound.png"
   }
 

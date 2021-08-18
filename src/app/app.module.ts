@@ -30,6 +30,9 @@ import { NgxPaginationModule } from 'ngx-pagination';
 import { PaginatorComponent } from './Paginator/paginator/paginator.component';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatSelectModule } from '@angular/material/select';
+import { MovieYearComponent } from './Components/movie-year/movie-year.component';
+import { MovieYearallComponent } from './Components/movie-yearall/movie-yearall.component';
+
 
 
 
@@ -56,11 +59,13 @@ import { MatSelectModule } from '@angular/material/select';
     MovieGenreComponent,
     ActorDetailComponent,
     PaginatorComponent,
+    MovieYearComponent,
+    MovieYearallComponent,
     
-    
-
 
   ],
+
+
   imports: [
     BrowserModule,
     AppRoutingModule,
@@ -73,7 +78,9 @@ import { MatSelectModule } from '@angular/material/select';
     PaginatorModule,
     NgxPaginationModule,
     MatFormFieldModule,
-    MatSelectModule
+    MatSelectModule,
+ 
+
   ],
   providers: [],
   bootstrap: [AppComponent]

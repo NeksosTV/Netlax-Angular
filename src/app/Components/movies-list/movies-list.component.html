@@ -1,53 +1,36 @@
 
 
 
+<!-- <div> 
+   <input *ngFor="let genre of genres" [value]="genre.Label"  (click)="gotoliste(genre.IdGenre)" style="vertical-align:middle"  class="button text-white"   type="button"  > 
+</div> -->
 
-<div>
-  <div class="form-group" >
-    <!-- <label for="exampleFormControlSelect1">Example select</label> -->
-    <select class="form-control" id="exampleFormControlSelect1" >
-      <option *ngFor="let genre of genres" [value]="genre.Label"  (click)="gotoliste(genre.IdGenre)">{{genre.Label}}</option>
-    </select>
-  </div>
-   <input style="vertical-align:middle"  class="button text-white"   type="button"  >
+ <!-- MENUE DEROULANT POUR LES GENRE DE FILME-->
+<div class="deroule">
+  <label class="text-white" for="exampleFormControlSelect1" selected>Choissiser votre Genre de film</label>
+  <select (change)="gotoliste( $event)" class="form-control" id="exampleFormControlSelect1" >
+    <option *ngFor="let genre of genres" [value]="genre.IdGenre"  >{{genre.Label}} </option>
+  </select>
 </div>
 
+<app-movie-yearall></app-movie-yearall>
+ <!-- ****************************************************-->
 
 
-<!-- plusieur page avec -->
-<!-- <nav aria-label="Page navigation example">
-  <ul class="pagination">
-    <li class="page-item"><a class="page-link" routerLink="/movies">Previous</a></li>
-    <li class="page-item"><a class="page-link" routerLink="/movies">1</a></li>
-    <li class="page-item"><a class="page-link" routerLink="/movies">2</a></li>
-    <li class="page-item"><a class="page-link" routerLink="/movies">3</a></li>
-    <li class="page-item"><a class="page-link" routerLink="/movies">Next</a></li>
-  </ul>
-</nav> -->
 
-<div *ngIf="movies.length > 0" class="UL">   
+
+<div id="col" *ngIf="movies.length > 0" class="UL">   
     <li *ngFor="let movie of movies" class="liste ">   
-        <div [ngStyle]="{display: 'flex', flexWrap: 'wrap', width:'100%', marginLeft:'10%' } " class="containeur ">              
-            <div  class="card" [ngStyle]="{width:'20%', margin : '5%'}">
+        <div [ngStyle]="{display: 'flex', flexWrap: 'wrap', width:'100%', marginLeft:'10%' } " class="containeur">              
+            <div  class="card" [ngStyle]="{width:'30%', margin : '10%'}">
               <div class="card-image m6"[ngStyle]="{display: 'flex', flexWrap: 'wrap', width:'80%', marginLeft:'10%'}" >
-                <img class="img-responsive m6" src="https://image.tmdb.org/t/p/original/{{movie.Picture}}" alt="Card image cap" (error)="defaultsrc(image)" #image>
+                <img class="img-responsive m6" src="https://image.tmdb.org/t/p/w500{{movie.Picture}}" alt="Card image cap" (error)="defaultsrc(image)" #image>
               </div>
               <div class="card-content">
-                <a [routerLink]="'/movies/'+movie.IdMovie" target="_blank" rel="noopener noreferrer"><h5 class="card-title btn btn-primary text-white">{{movie.Title}}</h5></a>
-                <p>
-                  Résumé : {{movie.Summary}} <br>  
-                </p>
+                <a [routerLink]="'/movies/'+movie.IdMovie" target="_blank" rel="noopener noreferrer"><h5 class="card-title btn btn-primary text-white">Information</h5></a>
               </div>
             </div>
           </div>
-        <!-- <div class="card" style="width: 18rem;" [ngStyle]="{display: 'flex', flexWrap: 'wrap', width:'30%', marginLeft:'30%'}">
-            
-            <img class="card-img-top" src="https://image.tmdb.org/t/p/original/{{movie.Picture}}" alt="Card image cap">
-                <div class="card-body">
-                  <a [routerLink]="'/movies/'+movie.IdMovie" target="_blank" rel="noopener noreferrer"><h5 class="card-title btn btn-primary">{{movie.Title}}</h5></a>
-                  <p class="card-text">{{movie.Summary}}</p>
-              </div>
-        </div> -->
     </li>
 </div>
 

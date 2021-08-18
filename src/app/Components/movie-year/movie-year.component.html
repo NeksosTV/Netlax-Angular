@@ -1,15 +1,6 @@
 
-  
-  
 
-<!-- 
-  <div class="form-group" >
-
-    <select *ngFor="let genre of movies" [value]="genre.Label" class="form-control" id="exampleFormControlSelect1" >
-      <option value="" selected> Choissiser votre Genre de film</option>
-      <option *ngFor="let genre of movies" [value]="genre.Label" >{{genre.Label}}</option>
-    </select>
-  </div> -->
+<!-- /Page d'arriver quand je clique sur une date de sortie dans le component movie-yearall -->
 
       <!-- icone Maison pour le boutton Retour au list de film -->
 
@@ -17,19 +8,25 @@
   <path d="M6.5 14.5v-3.505c0-.245.25-.495.5-.495h2c.25 0 .5.25.5.5v3.5a.5.5 0 0 0 .5.5h4a.5.5 0 0 0 .5-.5v-7a.5.5 0 0 0-.146-.354L13 5.793V2.5a.5.5 0 0 0-.5-.5h-1a.5.5 0 0 0-.5.5v1.293L8.354 1.146a.5.5 0 0 0-.708 0l-6 6A.5.5 0 0 0 1.5 7.5v7a.5.5 0 0 0 .5.5h4a.5.5 0 0 0 .5-.5z"/>
 </svg>Retour aux Film</a>  
 
-<div id="col" *ngIf="movies.length > 0" class="UL">   
+<!-- <ng-container *ngIf="list.length > 0">
+    <ul>
+        <li *ngFor="let date of list">
+        <a > {{date.Title}}</a>
+        </li>
+    </ul>
+</ng-container> -->
+
+<div id="col"  *ngIf="list.length > 0" class="UL">   
   <li *ngFor="let movie of movies" class="liste ">   
-      <div [ngStyle]="{display: 'flex', flexWrap: 'wrap', width:'100%', marginLeft:'10%' } " class="containeur">              
+      <div [ngStyle]="{display: 'flex', flexWrap: 'wrap', width:'100%', marginLeft:'10%' } " class="containeur ">              
           <div  class="card" [ngStyle]="{width:'30%', margin : '10%'}">
             <div class="card-image m6"[ngStyle]="{display: 'flex', flexWrap: 'wrap', width:'80%', marginLeft:'10%'}" >
               <img class="img-responsive m6" src="https://image.tmdb.org/t/p/w500{{movie.Picture}}" alt="Card image cap" (error)="defaultsrc(image)" #image>
             </div>
             <div class="card-content">
-              <a [routerLink]="'/movies/'+movie.IdMovie" target="_blank" rel="noopener noreferrer"><h5 class="card-title btn btn-primary text-white">Information</h5></a>
+              <a [routerLink]="'/movies/'+movie.IdMovie" target="_blank" rel="noopener noreferrer"><h5 class="card-title btn btn-primary">Information</h5></a>
             </div>
           </div>
         </div>
   </li>
 </div>
-
-<div *ngIf="movies.length ==0">La liste est en cours de chargement...</div>

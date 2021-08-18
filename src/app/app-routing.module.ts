@@ -1,3 +1,5 @@
+import { MovieYearallComponent } from './Components/movie-yearall/movie-yearall.component';
+import { MovieYearComponent } from './Components/movie-year/movie-year.component';
 import { ActorDetailComponent } from './Components/actor-detail/actor-detail.component';
 import { MovieGenreComponent } from './Components/movie-genre/movie-genre.component';
 import { PageLoginComponent } from './Components/page-login/page-login.component';
@@ -23,7 +25,9 @@ const routes: Routes = [
   {path: 'acteur', component: MoviesActorComponent},
   {path: 'login', component: PageLoginComponent},
   {path: 'genre/:id', component: MovieGenreComponent},
-  {path: 'acteurDetail/:id', component: ActorDetailComponent}
+  {path: 'acteurDetail/:id', component: ActorDetailComponent},
+  {path: 'year/:year', component: MovieYearComponent},
+  {path: 'year', component: MovieYearallComponent}
 ];
 
 @NgModule({

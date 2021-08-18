@@ -6,6 +6,7 @@ import { IMovieDetails } from './../Models/imovie-details';
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http'
 import { Observable } from 'rxjs';
+import { map } from 'rxjs/operators';
 import { IMovieTitle } from '../Models/imovie-title';
 import { Actor } from '../Models/actor';
 
@@ -48,18 +49,27 @@ export class NetFlaxAPIService {
 
 
 
-// Get tout les acteur
+// Get touts les acteurs
   public GetAllActor() : Observable<IMovieActor[]>{
     return this._http.get<IMovieActor[]>(`${this._url}/movies/acteur/`)
   }
 
+// Get toutes les infos d'un acteur
+  public GetCastDetail( id : number) : Observable<Actor>{
+    return this._http.get<Actor>(`${this._url}/Movies/cast/${id}`)
+  }
 
-  public GetCastDetail() : Observable<Actor[]>{
-    return this._http.get<Actor[]>(`${this._url}/Movies/cast/:id`)
+//--------------------date----------------------------
+
+  public GetAllDate( year : number) : Observable<IMovieTitle[]>{
+    return this._http.get<IMovieTitle[]>(`${this._url}/Movies/year/${year}`)
   }
 
 
-  
+  public GetAllDatesSortie() : Observable<number[]>{
+    return this._http.get<any[]>(`${this._url}/Movies/year`).pipe(map( ys => ys.map( y =>y.year)) )
+  }
+
 
 
 }

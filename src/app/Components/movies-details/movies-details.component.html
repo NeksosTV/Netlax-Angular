@@ -11,7 +11,7 @@
               <h1>Titre : {{movie.Title}}</h1>             
               <h1>Résumé : {{movie.Summary}}</h1> 
               <!-- <h1 class="text-white" *ngFor="let genres of genre">Genre : {{genres.Label}}</h1> -->
-              <h1 >Date de sortie : {{movie.ReleaseDate | date}}</h1>
+              <h1 *ngIf="movie">Date de sortie : {{movie.ReleaseDate | date : "MM YYYY"}}</h1>
 
               <iframe width="300" height="200" [src]="Trailer(movie.Trailer) | pipiTrailer" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 

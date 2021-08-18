@@ -14,7 +14,7 @@ import { NetFlaxAPIService } from 'src/app/Services/net-flax-api.service';
 })
 export class MovieGenreComponent implements OnInit {
 
-// @Input() movieGenre? : ImovieGenre[]
+
 
   public movies : IMovieTitle[]  = [] ;
   private _id? : number;
@@ -23,7 +23,7 @@ export class MovieGenreComponent implements OnInit {
   constructor( private _api : NetFlaxAPIService, private _route : ActivatedRoute) { }
 
   ngOnInit(): void {
-    // if(this.movieGenre) return
+
     this._route.params.subscribe(params =>{ 
       this._id = params.id
       if (this._id)

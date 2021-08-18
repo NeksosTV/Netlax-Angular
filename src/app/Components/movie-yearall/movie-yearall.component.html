@@ -1,0 +1,12 @@
+
+
+
+ <!-- MENUE DEROULANT POUR LES DATE DE SORTIE  FILME-->
+<div *ngIf="year.length > 0" class="deroule">
+    <label class="text-white" for="exampleFormControlSelect1" selected>Choissiser la date du film</label>
+    <select (change)="gotoliste( $event)" class="form-control" id="exampleFormControlSelect1" >
+      <option *ngFor="let date of year" [value]="date"  >{{date}} </option>
+    </select>
+</div>
+  
+ <!-- ****************************************************-->

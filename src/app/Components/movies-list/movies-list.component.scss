@@ -1,10 +1,28 @@
 *{
     color: rgb(0, 0, 0);
 }
+.btn{
+  margin-left: 60px;
+  font-size: medium;
+}
 
+#col {
+  column-count: 2;
+}
+
+.card{
+  border: black 2px solid;
+  // border-radius: 50% 20% / 10% 40%;
+}
 
 .p-button.p-button-icon-only { border-radius: 0;
 } .image-gallery { text-align: center; padding: 1rem;
+}
+
+.deroule{
+  padding: 20px;
+  width: 500px;
+  
 }
 
 
@@ -48,3 +66,6 @@
     right: 0;
   }
 
+.liste{
+  list-style-type: none;
+}

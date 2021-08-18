@@ -21,5 +21,10 @@ export class MoviesActorComponent implements OnInit {
     
   }
 
+  public gotoliste(event : any){
+    let year= event.target.value;
+    this._router.navigateByUrl("/year/"+year)
+  }
+
 
 }

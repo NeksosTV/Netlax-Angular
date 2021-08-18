@@ -8,3 +8,13 @@
 
 
 <div *ngIf="actor.length ==0">La liste est en cours de chargement...</div>
+
+ <!-- MENUE DEROULANT POUR LES DATE DE SORTIE  FILME-->
+ <div *ngIf="actor.length > 0" class="deroule">
+  <label class="text-white" for="exampleFormControlSelect1" selected>Choissiser la date du film</label>
+  <select (change)="gotoliste( $event)" class="form-control" id="exampleFormControlSelect1" >
+    <option *ngFor="let acteur of actor" [value]="acteur"  >{{acteur.LastName}} </option>
+  </select>
+</div>
+
+<!-- ****************************************************-->

@@ -5,6 +5,7 @@ import { MovieGenreComponent } from "../Components/movie-genre/movie-genre.compo
 export interface IMovieTitle {
     IdMovie : number;
     Title : string;
+    ReleaseDate : Date;
     Trailer : string;
     Summary : string;
     Picture : string;
